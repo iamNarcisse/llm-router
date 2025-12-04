@@ -13,7 +13,7 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 	"gopkg.in/yaml.v3"
 
-	pb "github.com/iamnarcisse/llm-router/proto"
+	pb "llm-router/services/router/proto"
 )
 
 type RoutesConfig struct {
