@@ -3,48 +3,105 @@ default_model: gpt-4o-mini
 
 routes:
   - name: code_generation
+    description: Specialized for software development tasks including coding, debugging, and technical implementation.
     model: deepseek-coder-v2
     provider: deepseek
     metadata:
       cost_tier: low
       max_tokens: 8192
+      use_case: "Software development and code debugging"
+      recommended_for: "Full-stack development, API creation, unit testing, and bug fixes"
     utterances:
-      - "write a python function"
-      - "help me debug this code"
-      - "create a REST API"
-      - "fix this bug"
-      - "write unit tests"
+      - Write a Python function that implements a binary search algorithm with edge case handling and type hints.
+      - Help me debug this JavaScript code that's throwing an undefined reference error when accessing nested object properties.
+      - Create a REST API in Node.js with Express for managing a todo list, including CRUD operations and authentication middleware.
+      - Fix this bug in my React component where the state isn't updating correctly after an async API call.
+      - Write comprehensive unit tests for this TypeScript class using Jest, covering all edge cases and error scenarios.
+      - Implement a PostgreSQL database schema for an e-commerce platform with proper indexing and foreign key relationships.
+      - Refactor this legacy Java code to follow SOLID principles and modern design patterns.
 
   - name: creative_writing
+    description: Optimized for creative and engaging content generation including storytelling, poetry, and marketing copy.
     model: claude-sonnet-4-20250514
     provider: anthropic
     metadata:
       cost_tier: medium
       max_tokens: 4096
+      use_case: "Creative content and marketing materials"
+      recommended_for: "Storytelling, poetry, brand messaging, and persuasive copywriting"
     utterances:
-      - "write a poem"
-      - "craft a story"
-      - "creative headline"
-      - "write marketing copy"
+      - Write a thought-provoking poem about artificial intelligence and humanity's relationship with technology in free verse style.
+      - Craft an engaging short story about a time traveler who accidentally changes a minor historical event with unexpected consequences.
+      - Create a creative headline and tagline for a new eco-friendly coffee brand targeting millennial consumers.
+      - Write compelling marketing copy for a SaaS product launch email that highlights the benefits of automated workflow management.
+      - Develop a character backstory for a cyberpunk novel protagonist who works as a memory hacker in Neo-Tokyo.
+      - Compose a persuasive blog post introduction about the benefits of remote work for productivity and work-life balance.
 
   - name: analysis
+    description: Designed for complex analytical tasks requiring deep reasoning, data interpretation, and comprehensive insights.
     model: gpt-4o
     provider: openai
     metadata:
       cost_tier: high
       max_tokens: 8192
+      use_case: "Data analysis and strategic decision-making"
+      recommended_for: "Business intelligence, document summarization, competitive analysis, and trend identification"
     utterances:
-      - "analyze this data"
-      - "summarize this document"
-      - "extract insights from"
-      - "compare these options"
+      - Analyze this quarterly sales data to identify trends, anomalies, and actionable insights for improving revenue in underperforming regions.
+      - Summarize this 50-page research paper on climate change mitigation strategies, highlighting key findings and policy recommendations.
+      - Extract meaningful insights from customer feedback data and identify the top three pain points affecting user satisfaction.
+      - Compare these five project management tools based on features, pricing, integration capabilities, and user reviews to recommend the best option.
+      - Evaluate the competitive landscape for electric vehicles in the European market, including market share and strategic positioning.
+      - Analyze the sentiment and key themes from 500 product reviews to inform the next iteration of our mobile app.
 
   - name: math_reasoning
+    description: Specialized in mathematical problem-solving, logical reasoning, and theorem proving with detailed explanations.
     model: claude-sonnet-4-20250514
     provider: anthropic
     metadata:
       cost_tier: medium
+      max_tokens: 4096
+      use_case: "Mathematical computation and logical reasoning"
+      recommended_for: "Equation solving, probability calculations, proof verification, and quantitative analysis"
     utterances:
-      - "solve this equation"
-      - "prove this theorem"
-      - "calculate the probability"
+      - Solve this system of linear equations using matrix operations and verify the solution with substitution.
+      - Prove the Pythagorean theorem using geometric construction and provide a step-by-step explanation.
+      - Calculate the probability of drawing three aces in a row from a standard 52-card deck without replacement.
+      - Derive the quadratic formula from first principles using the method of completing the square.
+      - Explain and solve this calculus optimization problem to find the maximum volume of a box with constrained surface area.
+      - Apply Bayes' theorem to calculate the posterior probability in this medical diagnosis scenario with given prior probabilities.
+
+  - name: general_purpose
+    description: A balanced model for everyday tasks requiring a mix of speed, cost-efficiency, and solid reasoning capabilities.
+    model: gemini-2.0-flash-exp
+    provider: google
+    metadata:
+      cost_tier: low
+      max_tokens: 8192
+      use_case: "General purpose, high-throughput tasks"
+      recommended_for: "Summarization, brainstorming, professional communication, and content explanation"
+    utterances:
+      - Summarize the key takeaways from this 30-minute podcast episode about sustainable agriculture practices.
+      - Explain the difference between microservices and monolithic architecture in simple terms for a non-technical stakeholder.
+      - Help me brainstorm innovative ideas for a virtual team-building event that engages remote employees across different time zones.
+      - Draft a professional email to a client requesting a two-week project deadline extension with valid justification.
+      - Convert this technical documentation into a user-friendly guide with clear examples and screenshots descriptions.
+      - Provide a balanced overview of the pros and cons of adopting Kubernetes for container orchestration in a startup environment.
+
+  - name: quick_queries
+    description: The fastest and most cost-effective option for simple, high-volume tasks like classification, extraction, and basic queries.
+    model: gemini-2.0-flash-lite-exp
+    provider: google
+    metadata:
+      cost_tier: very_low
+      max_tokens: 4096
+      use_case: "Real-time, simple tasks"
+      recommended_for: "Classification, translation, data extraction, quick conversational queries, and simple Q&A"
+    utterances:
+      - Classify this customer support email as 'Urgent', 'Normal', or 'Low Priority' based on the content and tone.
+      - Extract the name, email address, and phone number from this unstructured contact information text.
+      - Translate this product description from English to Spanish while maintaining the marketing tone.
+      - What's the current weather forecast for San Francisco this weekend?
+      - Tell me a quick fun fact about space exploration.
+      - Is this movie review positive or negative in sentiment?
+      - Convert this date from MM/DD/YYYY to YYYY-MM-DD format.
