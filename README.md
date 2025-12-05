@@ -1,4 +1,4 @@
-# LLM Router
+# Model Router
 
 Semantic router for directing user queries to optimal LLM models based on task type using vector similarity.
 
