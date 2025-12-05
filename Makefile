@@ -9,7 +9,6 @@ proto:
 build: proto
 	@echo "Building Go router..."
 	cd services/router && go build -o ../../bin/router ./cmd/server
-	cd services/router && go build -o ../../bin/seed ./cmd/seed
 
 build-docker:
 	docker compose -f deployments/docker-compose.yaml build
@@ -31,11 +30,7 @@ run-all:
 # Seed routes
 seed-py: run-deps
 	@sleep 2
-	cd scripts && python seed-routes.py
-
-seed-go: build run-deps
-	@sleep 2
-	./bin/seed
+	services/embedding/venv/bin/python scripts/seed-routes.py
 
 seed: seed-py  # Default to Python seeder
 

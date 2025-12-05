@@ -1,0 +1,6 @@
+{
+  "venvPath": "services/embedding",
+  "venv": "venv",
+  "extraPaths": ["services/embedding/src"]
+}
+

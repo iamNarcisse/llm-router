@@ -1,5 +1,10 @@
 grpcio>=1.62.0
 grpcio-tools>=1.62.0
+grpcio-reflection>=1.62.0
+grpc-stubs>=1.53.0
 protobuf>=4.25.3,<5.0.0
 sentence-transformers>=3.0.0
 torch>=2.0.0
+pyyaml>=6.0.0
+qdrant-client>=1.7.0
+optimum[onnxruntime]>=1.17.0

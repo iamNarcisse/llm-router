@@ -20,9 +20,10 @@ services:
     ports:
       - "50052:50052"
     environment:
-      - MODEL_NAME=Qwen/Qwen3-Embedding-0.6B
+      - MODEL_NAME=BAAI/bge-small-en-v1.5
       - GRPC_PORT=50052
       - MAX_WORKERS=4
+      - EMBEDDING_BACKEND=onnx
     healthcheck:
       test:
         [

@@ -4,7 +4,7 @@ server:
 
 embedding:
   address: "localhost:50052"
-  timeout: 60ms
+  timeout: "5s"
   max_retries: 2
 
 qdrant:
